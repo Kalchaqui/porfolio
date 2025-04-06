@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Template portafolio desarrollador UI/UX" />
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
+    <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
+    <link rel="stylesheet" href="/src/style.css">
+    <script src="https://kit.fontawesome.com/b3f17f1dac.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- HEADER -->
+<header class="flex w-full fixed top-0 z-1">
+  <nav class="flex justify-content-between w-full navbar">
+      <span class="logo cursor-pointer">
+          <img src="/assets/Logo.png" alt="Logo portafolio" width="50" height="50">
+      </span>
+      <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu" class="checkbox xl:hidden">
+      <div class="hamburger__lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+      </div>
+      <div class="header__info flex align-items-center gap-3">
+          <ul class="flex flex-column xl:flex-row list-none">
+              <li data-section="about">Sobre mí</li>
+              <li data-section="certificados">Certificados</li>
+              <li data-section="portfolio">Proyectos</li>
+              <li data-section="contact">Contacto</li>
+          </ul>
+      </div>
+  </nav>
+</header>
+    <!-- HOME PAGE -->
+    <div class="container">
+        <section id="home" class="home__page flex align-items-center justify-content-center xl:justify-content-between grid grid-nogutter gap-4">
+            <div class="left__content col-12 xl:col-6">
+                <div class="message__bubble triangle mb-4 md:mb-2"></div>
+                <h1 class="text-3xl sm:text-5xl md:text-7xl">Kalcha</h1>
+                <h2 class="text-gray-500">Desarrollador de Dapps</h2>
+                <br>
+                <br>
+                <p><span class="retro-text">Me llamo Diego Raúl Barrionuevo, soy desarrollador de aplicaciones Dapps usando las últimas tecnologías front-end y blockchain para buscar soluciones a problemas reales.</span></p>
+                <br>
+                <p><span class="retro-text">Cuento con una base sólida gracias a mi participación en diversos hackathons y simulaciones laborales en equipo. Durante estos años, he desarrollado múltiples proyectos que me han permitido fortalecer mis habilidades técnicas y colaborativas en entornos dinámicos y desafiantes.</span></p>
+                <div class="home__buttons flex align-items-center gap-2 mt-6">
+                    <a href="/assets/CV Diego Raul Barrionuevo.pdf" aria-label="Descargar curriculum" class="cursor-pointer border-round-lg no-underline" download>Descargar CV</a>
+                    <button onclick="scrollToSection('portfolio')" aria-label="Deslizar a sección portafolio para mostrar mis trabajos" class="cursor-pointer border-round-lg">Mis proyectos</button>
+                </div>
+            </div>
+            <div class="right__content col-9 sm:col-6 xl:col-5">
+                <img src="/assets/kalcha.jpg" alt="Foto perfil" width="100" height="100">
+            </div>
+        </section>
+        <!-- ABOUT ME -->
+        <section id="about" class="about__me w-full min-h-screen flex align-items-center">
+            <div class="aboutMe__content min-h-full flex flex-column md:flex-row pt-8 md:pt-0">
+                <div class="aboutMe__info col-12 md:col-6 md:pr-6 pt-0">
+                    <h1 class="text-3xl md:text-5xl">Sobre mí</h1>
+                    <br>
+                    <br>
+                    <p><span class="retro-text">Estoy motivado para trabajar y ganar valor experiencia en el área de servicios Blockchain. Puedo trabajar con tecnologías Web2 y Web3 enfocándome en buscar soluciones a problemas reales.</span></p>
+                    <div class="knowledge flex flex-column gap-3 mt-5">
+                        <p>CSS 80%</p>
+                        <div class="progress__bar progress__css">
+                            <span></span>
+                        </div>
+                        <p>HTML 80%</p>
+                        <div class="progress__bar progress__html">
+                            <span></span>
+                        </div>
+                        <p>ReactJs 75%</p>
+                        <div class="progress__bar progress__reactJs">
+                            <span></span>
+                        </div>
+                        <p>ReactTs 75%</p>
+                        <div class="progress__bar progress__reactJs">
+                            <span></span>
+                        </div>
+                        <p>Solidity 85%</p>
+                        <div class="progress__bar progress__reactJs">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image col p-0 mt-6 md:mt-0">
+                    <img src="/assets/kalcha2.jpg" alt="Foto relacionado a acerca de mí" width="100" height="100">
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- JUEGO -->
+    <section class="freelancer mb-4 mt-4 min-w-full flex justify-content-center align-items-center">
+        <iframe src="/Juego/index.html" width="80%" height="500" style="border:none;"></iframe>
+    </section>
+    <br>
+    <!-- CERTIFICADOS -->
+    <div class="container">
+        <section id="certificados" class="portfolio min-h-full w-full pb-8 pt-8">
+            <div class="portfolio__title flex flex-column gap-3 text-center">
+                <h1 class="text-3xl md:text-5xl">Mis Certificados</h1>
+                <p><span class="retro-text">Estos son las certificaciones más importantes para mí, tanto en desarrollo WEB2 como WEB3.</span></p>
+                <br>
+            </div>
+            <!-- Contenedor ÚNICO para todas las imágenes -->
+            <div class="proyect__gallery flex justify-center items-center flex-wrap gap-3">
+                <div class="project__card2">
+                    <img src="/assets/EducatEth.png" alt="Certificado de EducatEth">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/EducatEth1.png" alt="Certificado de EducatEth 1">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/chainlink.png" alt="Certificado de Chainlink">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/GIT.jpg" alt="Certificado de GIT">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/NoCountry1.jpg" alt="Certificado de No Country 1">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/NoCountry2.jpg" alt="Certificado de No Country 2">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/Scaffold.jpg" alt="Certificado de Scaffold">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/EducatETH5.jpg" alt="Certificado de EducatEth 5">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/udemy.jpg" alt="Certificado de Udemy">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/chatGpt.jpg" alt="Certificado de ChatGPT">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/utn.png" alt="Certificado de UTN">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/utn2.jpg" alt="Certificado de UTN 2">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/eduIt.jpg" alt="Certificado de EduIT">
+                    <div class="overlay"></div>
+                </div>
+                <div class="project__card2">
+                    <img src="/assets/eduIt2.jpg" alt="Certificado de EduIT 2">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+        </section>
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="portfolio min-h-full w-full pb-8 pt-8">
+            <div class="portfolio__title flex flex-column gap-3 text-center">
+                <h1 class="text-3xl md:text-5xl">Mis Proyectos</h1>
+                <p><span class="retro-text align-items-center">Estos son los proyectos que estuve haciendo en el transcurso de estos últimos años de desarrollo WEB2 y WEB3.</span></p>
+            </div>
+            <div class="portfolio__gallery">
+                <div class="gallery__categories mb-5 mt-5">
+                    <ul class="flex list-none flex-wrap justify-content-center gap-3">
+                        <li class="filter-item active" data-filter="all">Todos</li>
+                        <li class="filter-item" data-filter="web2">WEB2</li>
+                        <li class="filter-item" data-filter="web3">WEB3</li>
+                    </ul>
+                </div>
+                <div class="proyect__gallery flex justify-content-center align-items-center flex-wrap gap-3">
+                    <div class="project__card web2">
+                        <img src="/assets/proyecto-1.png" alt="Proyecto Market">
+                        <div class="overlay"></div>
+                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Market</h2>
+                            <p>En este proyecto se creó un market de productos orgánicos, donde puedes seleccionar los productos y comprar.</p>
+                            <a href="https://productos-organicos-65iv6g1fd-kalchas-projects.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project__card web3">
+                        <img src="/assets/proyecto-2.png" alt="Proyecto WoodWork">
+                        <div class="overlay"></div>
+                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>WoodWork</h2>
+                            <p>Plataforma innovadora que conecta a profesionales con espacios de trabajo coworking en áreas específicas. Creada en una demo de No Country con un grupo de trabajo.</p>
+                            <a href="https://s15-17-java-angular-r2kvnzlpo-kalchas-projects.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project__card web2">
+                        <img src="/assets/Cotizador.png" alt="Proyecto Cotizador de Cripto">
+                        <div class="overlay"></div>
+                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Cotizador de Cripto</h2>
+                            <p>En este proyecto se creó un cotizador de criptomonedas, donde puedes seleccionar la moneda y compararla con una cripto y ver la cotización actualizada.</p>
+                            <a href="https://cotizacion-monedas-aallio12v-kalchas-projects.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project__card gym">
+                        <img src="/assets/proyecto-4.jpeg" alt="Proyecto Travel Tours 1">
+                        <div class="overlay"></div>
+                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Travel Tours</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet</p>
+                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        </div>
+                    </div>
+                    <div class="project__card world__Tours">
+                        <img src="/assets/proyecto-5.jpg" alt="Proyecto Travel Tours 2">
+                        <div class="overlay"></div>
+                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <h2>Travel Tours</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quae obcaecati amet</p>
+                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FOOTER -->
+        <footer id="contact" class="min-h-full w-full flex grid col-12 justify-content-center pb-8 pt-8 lg:text-center">
+            <div class="social__media col-12 md:col-4 flex flex-column justify-content-between">
+                <h1>Contactame</h1>
+                <br>
+                <br>
+                <p><span class="retro-text">Redes sociales</span></p>
+                <div class="social__mediaIcons mt-5 flex lg:justify-content-center gap-3">
+                    <a href="https://x.com/DiegoRa87301862" target="_blank" aria-label="Ir a Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/Kalchaqui" target="_blank" aria-label="Ir a GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/diego-raul-barrionuevo/" target="_blank" aria-label="Ir a LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="discord://discordapp.com/users/kalcha#8772" target="_blank" aria-label="Ir a Discord">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

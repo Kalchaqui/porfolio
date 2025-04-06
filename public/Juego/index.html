@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUGAR A ESCAPA DEL ALIEN</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            background-color: #000;
+            color: #00ff00;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #222;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        }
+        button:hover {
+            background-color: #333;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        button:disabled {
+            background-color: #000;
+            color: #666;
+            cursor: not-allowed;
+        }
+        #narrativa {
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #000;
+            border-radius: 5px;
+            border: 1px solid #00ff00;
+            font-size: 1.2em;
+            text-shadow: 0 0 5px #00ff00;
+            max-width: 600px;
+            transition: border-color 0.3s;
+        }
+        #narrativa.bajo-salud {
+            border-color: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        #narrativa.alien-cerca {
+            animation: flicker 0.1s infinite;
+        }
+        #estadoJuego {
+            font-weight: bold;
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+            margin: 10px;
+        }
+        #inventario {
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+            margin: 10px;
+        }
+        #opciones {
+            margin: 10px;
+        }
+        body::before {
+            content: " ";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2017/10/12/19/54/green-2847469_960_720.jpg') repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        #background-audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>JUGAR A ESCAPA DEL ALIEN</h1>
+    <div id="narrativa">Elige dificultad para comenzar:</div>
+    <div id="opciones">
+        <button onclick="iniciarJuego('fácil')">Fácil</button>
+        <button onclick="iniciarJuego('normal')">Normal</button>
+        <button onclick="iniciarJuego('difícil')">Difícil</button>
+    </div>
+    <p id="estadoJuego">Cargando estado...</p>
+    <div id="inventario">Inventario: Ninguno</div>
+    <audio id="background-audio" loop>
+        <source src="Alien.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <script src="escape.js"></script>
+</body>
+</html>
