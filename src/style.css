@@ -270,18 +270,6 @@ body::-webkit-scrollbar-track {
   transform: translateY(-2px);
 }
 
-@keyframes neonPulse {
-  0% {
-      box-shadow: 0 0 10px var(--neon-green-glow);
-  }
-  50% {
-      box-shadow: 0 0 20px var(--neon-green-glow), inset 0 0 15px var(--neon-green-glow);
-  }
-  100% {
-      box-shadow: 0 0 10px var(--neon-green-glow);
-  }
-}
-
 .home__buttons a,
 .home__buttons button {
   animation: neonPulse 2s infinite ease-in-out;
@@ -302,16 +290,30 @@ body::-webkit-scrollbar-track {
       padding-top: 10rem;
   }
 }
+
 /* Estilo retro-futurista para los párrafos */
 .retro-text {
   font-family: 'Courier New', Courier, monospace; /* Tipografía estilo terminal */
   color: #00ff00; /* Verde robótico clásico */
-  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* Brillo neon */
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* Brillo neón */
   display: inline-block;
   white-space: pre-wrap; /* Respeta los saltos de línea y espacios */
   overflow: hidden; /* Necesario para el efecto de tecleo */
-  border-right: 2px solid #00ff00; /* Cursor parpadeante */
-  animation: typing 4s steps(40, end) 1; /* Se ejecuta solo una vez */
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+  padding-left: 10px; /* Espacio para la línea verde a la izquierda */
+  animation: typing 4s steps(40, end) 1; /* Animación de tecleo */
+}
+
+/* Línea verde a la izquierda con efecto de parpadeo */
+.retro-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px; /* Grosor de la línea */
+  background-color: #00ff00; /* Color verde */
+  animation: blink 0.75s step-end infinite; /* Parpadeo continuo */
 }
 
 /* Animación de tecleo */
@@ -324,18 +326,13 @@ body::-webkit-scrollbar-track {
   }
 }
 
-/* Opcional: Cursor parpadeante después de terminar */
-.retro-text.finished {
-  animation: blink 0.75s step-end infinite; /* Cursor sigue parpadeando */
-}
-
 /* Animación de cursor parpadeante */
 @keyframes blink {
   from, to {
-      border-color: transparent;
+      opacity: 0;
   }
   50% {
-      border-color: #00ff00;
+      opacity: 1;
   }
 }
 
@@ -591,7 +588,6 @@ footer {
 
 /* Aseguramos que las clases de PrimeFlex no afecten el footer */
 .flex, .grid, .col-12 {
-  
   box-shadow: none !important;
   outline: none !important;
 }
